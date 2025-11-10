@@ -8,6 +8,7 @@ import "./globals.css";
 import TopBar from "@/components/TopBar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { SessionProvider } from "next-auth/react";
+import { Toaster } from "sonner";
 
 export default function RootLayout({
   children,
@@ -35,6 +36,7 @@ export default function RootLayout({
               <QueryClientProvider client={queryClient}>
                 <TopBar />
                 <main className="p-6">{children}</main>
+                <Toaster richColors position="top-center" />
               </QueryClientProvider>
             </trpc.Provider>
           </SessionProvider>
