@@ -10,22 +10,30 @@ export default function TopBar() {
   const isAuthenticated = status === "authenticated"
 
   return (
-    <header className="w-full flex items-center justify-between px-6 py-3 border-b bg-background">
-      <h1 className="text-lg font-semibold">Order Trak</h1>
+    <header className="w-full flex items-center justify-between px-6 py-3 border-b bg-background sticky top-0 z-50">
+      <Link href="/" className="flex items-center gap-2">
+        <Button variant="ghost" className="px-3">
+          <h1 className="text-lg font-semibold tracking-tight">OrderTrak</h1>
+        </Button>
+      </Link>
 
-      <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-3">
         {isAuthenticated ? (
           <>
             <Link href="/dashboard">
-              <Button variant="ghost">Dashboard</Button>
+              <Button variant="default">Dashboard</Button>
             </Link>
-            <Button variant="ghost" onClick={() => signOut()}>
+            <Button
+              variant="outline"
+              onClick={() => signOut()}
+              className="hover:bg-destructive hover:text-destructive-foreground transition"
+            >
               Logout
             </Button>
           </>
         ) : (
           <Link href="/login">
-            <Button variant="ghost">Login</Button>
+            <Button variant="default">Login</Button>
           </Link>
         )}
         <ModeToggle />

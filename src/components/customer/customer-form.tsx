@@ -63,7 +63,7 @@ export function CustomerForm() {
   }
 
   return (
-    <main className="flex justify-center mt-12 px-4">
+    <div className="flex justify-center mt-12 px-4">
       <Card className="w-full max-w-2xl shadow-sm">
         <CardHeader>
           <CardTitle>Add Customer</CardTitle>
@@ -169,6 +169,6 @@ export function CustomerForm() {
           </form>
         </CardContent>
       </Card>
-    </main>
+    </div>
   )
 }
